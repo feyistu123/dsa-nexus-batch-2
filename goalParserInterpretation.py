@@ -4,7 +4,7 @@ class Solution:
         i = 0
         while i < len(command):
             if command[i] == 'G':
-                result = result + command[i] 
+                result = result + 'G'
                 i += 1
             elif command[i:i+2] == '()':
                 result = result + 'o' 
