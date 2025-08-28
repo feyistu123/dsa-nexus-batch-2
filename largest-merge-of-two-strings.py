@@ -1,11 +1,13 @@
 def largestMerge(self, word1: str, word2: str) -> str:
+        ptr1 = 0
+        ptr2 = 0
         merge = ""
-        while word1 and word2:
-            if word1 > word2:
-                merge += word1[0]
-                word1 = word1[1:]
+        while ptr1 < len(word1) and ptr2 < len(word2):
+            if word1[ptr1:] > word2[ptr2:]:
+                merge += word1[ptr1]
+                ptr1 += 1
             else:
-                merge += word2[0]
-                word2 = word2[1:]
-        merge += word1 + word2
+                merge += word2[ptr2]
+                ptr2 += 1
+        merge += word1[ptr1:] + word2[ptr2:]
         return merge
